@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="homeStyle.css" type="text/css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="styleHome.css" type="text/css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+        integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
+
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">
-            <img src="../imagens/Logo.jpg" width="90" height="90" alt="Logo">
+            <img src="../imagens/logo.png" width="90" height="90" alt="Logo">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <p class="titulo"><b>Gasteau's  </b></p>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -23,35 +29,113 @@
                     <a class="nav-link" href="home.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Ofertas</a>
+                    <a class="nav-link" href="#">Nossa equipe</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Pratos</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
                         Categorias
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Mercearia</a>
-                        <a class="dropdown-item" href="#">Enlatados</a>
+                        <a class="dropdown-item" href="#">Entradas</a>
+                        <a class="dropdown-item" href="#">Pratos principais</a>
+                        <a class="dropdown-item" href="#">Sobremesas</a>
+                        <a class="dropdown-item" href="#">Cartela de vinhos</a>
                         <a class="dropdown-item" href="#">Bebidas</a>
-                        <a class="dropdown-item" href="#">Higiene Pessoal</a>
-                        <a class="dropdown-item" href="#">Utensílios Domésticos</a>
                     </div>
                 </li>
             </ul>
             <form class="form-inline ml-auto">
                 <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar produtos</button>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                    <i class="fas fa-search"></i> <!-- Ícone de lupa -->
+                </button>
             </form>
             <a class="navbar-brand" href="login.html">
-                <img src="../imagens/loginHome.png" width="30" height="30" alt="Login Icon"> Login
+                <img src="../imagens/userLogin.png" width="30" height="30" alt="Login Icon">
             </a>
         </div>
     </nav>
 
 
+    <section id="lancamentos" class="releases">
+        <div class="container">
+            <h2>Pratos principais
+            </h2>
+            <div class="swiper releases__slider">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="releases__plate" data-modal-open="modal-3283">
+                            <img src="https://files.oaiusercontent.com/file-AhYtJWnembP7qLmVsHw5Igyu?se=2024-10-03T19%3A37%3A55Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D99c53f1c-e652-4cf0-b6f3-a9f0dfb885a2.webp&sig=SqMBCpBt4wnuUzU9xYtAYrrcHj%2BVJjDi8iVpLR4ashc%3D">
+                            <div class="releases__hover">
+                                <i class="fas fa-plus"></i>
+                                <p>Ratattouile</p>
+                                <div class="releases__see-more">Ver mais</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="releases__plate" data-modal-open="modal-3280">
+                            <img src="https://cocobambu.com/wp-content/uploads/2024/06/2024-06-25-16.56.01.webp">
+                            <div class="releases__hover">
+                                <i class="fas fa-plus"></i>
+                                <p>Camarão Siciliano</p>
+                                <div class="releases__see-more">Ver mais</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="releases__plate" data-modal-open="modal-1907">
+                            <img src="https://cocobambu.com/wp-content/uploads/2022/10/CB_BR_INSTI_345_03_23_ESPAGUETE_COCO_BAMBU_LANCAMENTO_PRATO_BANNER.png">
+                            <div class="releases__hover">
+                                <i class="fas fa-plus"></i>
+                                <p>Espaguete Coco Bambu</p>
+                                <div class="releases__see-more">Ver mais</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="releases__plate" data-modal-open="modal-1905">
+                            <img src="https://cocobambu.com/wp-content/uploads/2022/10/CAPRI-e1666946524904.jpg">
+                            <div class="releases__hover">
+                                <i class="fas fa-plus"></i>
+                                <p>Camarão Capri</p>
+                                <div class="releases__see-more">Ver mais</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="releases__plate" data-modal-open="modal-1900">
+                            <img src="https://cocobambu.com/wp-content/uploads/2022/10/ARUBA-e1666946494976.jpg">
+                            <div class="releases__hover">
+                                <i class="fas fa-plus"></i>
+                                <p>Camarão Aruba</p>
+                                <div class="releases__see-more">Ver mais</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="releases__plate" data-modal-open="modal-1897">
+                            <img src="https://cocobambu.com/wp-content/uploads/2022/10/MONACO-e1666946209648.jpg">
+                            <div class="releases__hover">
+                                <i class="fas fa-plus"></i>
+                                <p>Camarão Mônaco</p>
+                                <div class="releases__see-more">Ver mais</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination releases-pagination"></div>
+            </div>
+        </div>
+    </section>
     
 
-    <footer class="bg-danger text-light w-100 mt-auto py-4">
+
+    <footer class="text-light w-100 mt-auto py-4">
         <div class="container">
             <div class="row">
                 <!-- Coluna de Contatos -->
@@ -60,39 +144,36 @@
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a href="https://wa.me/3491564999" class="text-light">
-                                <i class="fab fa-whatsapp fa-lg"></i> (34) 99860-7000
+                                <i class="fab fa-whatsapp fa-lg"></i> 99860-7000
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="text-light">
-                                <i class="fab fa-instagram fa-lg"></i> Fique por dentro das novidades
+                                <i class="fab fa-instagram fa-lg"></i> Gasteau's
                             </a>
                         </li>
                     </ul>
                 </div>
-    
+
                 <!-- Coluna de Endereços Atendidos -->
                 <div class="col-md-6">
-                    <h2>Endereços Atendidos</h2>
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                            <p class="text-light">Rua Exemplo, 123 - Bairro Centro</p>
-                        </li>
-                        <li class="nav-item">
-                            <p class="text-light">Avenida Principal, 456 - Bairro Jardim</p>
-                        </li>
-                        <li class="nav-item">
-                            <p class="text-light">Rua Secundária, 789 - Bairro São José</p>
-                        </li>
-                    </ul>
+                    <h2>Localização</h2>
+                    <h7>Torre Eiffel,<br>
+                        Champ de Mars,<br>
+                        5 Avenue Anatole France,<br>
+                        75007 Paris,<br>
+                        França
+                    </h7>
                 </div>
             </div>
         </div>
     </footer>
-    
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"
+        crossorigin="anonymous"></script>
 
 </body>
+
 </html>

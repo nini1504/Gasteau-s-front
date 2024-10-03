@@ -9,21 +9,18 @@ body {
     margin-bottom: 20px;
 }
 
-.card img {
-    width: 100%;
-    height: auto;
-}
-
-.price {
-    color: grey;
-    font-size: 22px;
+.titulo{
+    font-size: 30px;
+    color:rgb(164, 79, 48);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
 }
 
 .card button {
     border: none;
     padding: 10px;
     color: white;
-    background-color: #28a745;
+    background-color:rgb(164, 79, 48);
     text-align: center;
     cursor: pointer;
     width: 100%;
@@ -35,5 +32,5 @@ body {
 }
 
 footer {
-    background-color: #dc3545;
+    background-color: rgb(164, 79, 48);
 }

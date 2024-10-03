@@ -1,10 +1,10 @@
 body{
-    background-color: rgb(219, 213, 197);
+    background-color:rgb(164, 79, 48);
 }
 
 .caixa {
     width: 700px;
-    height: 800px;
+    height: 750px;
     background-color: whitesmoke; 
     margin-top: 20px;
     box-sizing: border-box;
@@ -13,7 +13,7 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Centraliza a div */
-    border-radius: 10px; /* Arredonda as bordas da div */
+    font-size: 20px;
 }
 
 label {
@@ -43,6 +43,6 @@ button {
     border: 1px solid #ccc; /* Adiciona borda leve aos inputs */
     box-sizing: border-box;
     color: white; /* Cor do texto */
-    background-color: red; /* Fundo vermelho */
+    background-color:rgb(164, 79, 48); /* Fundo vermelho */
     border: none; /* Remove a borda padrão do botão */
 }
