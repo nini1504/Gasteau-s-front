@@ -1,0 +1,48 @@
+body{
+    background-color: rgb(219, 213, 197);
+}
+
+.caixa {
+    width: 500px;
+    height: 500px;
+    background-color: whitesmoke; 
+    margin-top: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Sombra cinza escura */
+    position: absolute; /* Permite usar top, left */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centraliza a div */
+    border-radius: 10px; /* Arredonda as bordas da div */
+}
+
+label {
+    display: block;
+    text-align: left; /* Alinha os labels à esquerda */
+    margin-bottom: 10px;
+    margin-left: 15%; /* Alinha o label com a largura do input */
+}
+
+/* Estilos adicionais para os inputs com bordas arredondadas */
+input {
+    padding: 8px;
+    width: 70%; /* Ajusta a largura dos inputs */
+    margin: 0 auto; /* Centraliza os inputs */
+    display: block;
+    border-radius: 15px; /* Arredonda os campos de input */
+    border: 1px solid #ccc; /* Adiciona borda leve aos inputs */
+    box-sizing: border-box;
+}
+button {
+    padding: 10px 10px;
+    font-size: 14px;
+    display: block;
+    width: 30%; /* Ajuste a largura do botão conforme necessário */
+    margin: 10px auto; /* Centraliza o botão */
+    border-radius: 20px; /* Arredonda os campos de input */
+    border: 1px solid #ccc; /* Adiciona borda leve aos inputs */
+    box-sizing: border-box;
+    color: white; /* Cor do texto */
+    background-color:red; /* Fundo vermelho */
+    border: none; /* Remove a borda padrão do botão */
+}
