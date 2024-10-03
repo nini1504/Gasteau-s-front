@@ -15,7 +15,12 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
 }
-
+.pratos{
+    font-size:40px;
+    color:rgb(164, 79, 48);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+}
 .card button {
     border: none;
     padding: 10px;
@@ -33,4 +38,37 @@ body {
 
 footer {
     background-color: rgb(164, 79, 48);
+}
+.reserva_box {
+    background-image: url('../imagens/rest.png');
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    color: white;
+    text-align: left;
+    border-radius: 10px;
+}
+.equipe_box {
+    background-image: url('../imagens/chefs.png');
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    color: white;
+    text-align: left;
+    border-radius: 10px;
+}
+
+.reserva__button {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.reserva__button:hover {
+    background-color: #e68900;
 }

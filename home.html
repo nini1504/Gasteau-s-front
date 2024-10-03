@@ -18,7 +18,7 @@
         <a class="navbar-brand" href="#">
             <img src="../imagens/logo.png" width="90" height="90" alt="Logo">
         </a>
-        <p class="titulo"><b>Gasteau's  </b></p>
+        <p class="titulo"><b>Gasteau's </b></p>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -60,79 +60,117 @@
         </div>
     </nav>
 
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        </ol>
 
-    <section id="lancamentos" class="releases">
-        <div class="container">
-            <h2>Pratos principais
-            </h2>
-            <div class="swiper releases__slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="releases__plate" data-modal-open="modal-3283">
-                            <img src="https://files.oaiusercontent.com/file-AhYtJWnembP7qLmVsHw5Igyu?se=2024-10-03T19%3A37%3A55Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D99c53f1c-e652-4cf0-b6f3-a9f0dfb885a2.webp&sig=SqMBCpBt4wnuUzU9xYtAYrrcHj%2BVJjDi8iVpLR4ashc%3D">
-                            <div class="releases__hover">
-                                <i class="fas fa-plus"></i>
-                                <p>Ratattouile</p>
-                                <div class="releases__see-more">Ver mais</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="releases__plate" data-modal-open="modal-3280">
-                            <img src="https://cocobambu.com/wp-content/uploads/2024/06/2024-06-25-16.56.01.webp">
-                            <div class="releases__hover">
-                                <i class="fas fa-plus"></i>
-                                <p>Camarão Siciliano</p>
-                                <div class="releases__see-more">Ver mais</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="releases__plate" data-modal-open="modal-1907">
-                            <img src="https://cocobambu.com/wp-content/uploads/2022/10/CB_BR_INSTI_345_03_23_ESPAGUETE_COCO_BAMBU_LANCAMENTO_PRATO_BANNER.png">
-                            <div class="releases__hover">
-                                <i class="fas fa-plus"></i>
-                                <p>Espaguete Coco Bambu</p>
-                                <div class="releases__see-more">Ver mais</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="releases__plate" data-modal-open="modal-1905">
-                            <img src="https://cocobambu.com/wp-content/uploads/2022/10/CAPRI-e1666946524904.jpg">
-                            <div class="releases__hover">
-                                <i class="fas fa-plus"></i>
-                                <p>Camarão Capri</p>
-                                <div class="releases__see-more">Ver mais</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="releases__plate" data-modal-open="modal-1900">
-                            <img src="https://cocobambu.com/wp-content/uploads/2022/10/ARUBA-e1666946494976.jpg">
-                            <div class="releases__hover">
-                                <i class="fas fa-plus"></i>
-                                <p>Camarão Aruba</p>
-                                <div class="releases__see-more">Ver mais</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="releases__plate" data-modal-open="modal-1897">
-                            <img src="https://cocobambu.com/wp-content/uploads/2022/10/MONACO-e1666946209648.jpg">
-                            <div class="releases__hover">
-                                <i class="fas fa-plus"></i>
-                                <p>Camarão Mônaco</p>
-                                <div class="releases__see-more">Ver mais</div>
-                            </div>
+        <div class="carousel-inner">
+            <div class="container p-3 my-3">
+                <p class="pratos"><b>Clássicos da casa</b></p>
+            </div>
+            <!-- Ratatouille -->
+            <div class="carousel-item active">
+
+                <div class="d-flex justify-content-center">
+                    <img class="d-block" src="../imagens/ratatouille.png" alt="Ratattouile" style="width: 700px;">
+                </div>
+                <div class="carousel-caption">
+                    <p>Ratattouile</p>
+                </div>
+            </div>
+            <!-- Remy's Special -->
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <img class="d-block" src="../imagens/remyspecial.png" alt="Remy's Special" style="width: 700px;">
+                </div>
+                <div class="carousel-caption">
+                    <p>Remy's Special</p>
+                </div>
+            </div>
+            <!-- Filet de Boeuf -->
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <img class="d-block" src="../imagens/file.png" alt="Filet de Boeuf" style="width: 700px;">
+                </div>
+                <div class="carousel-caption">
+                    <p>Filet de Boeuf</p>
+                </div>
+            </div>
+            <!-- Quiche Lorraine -->
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <img class="d-block" src="../imagens/quiche.png" alt="Quiche Lorraine" style="width: 700px;">
+                </div>
+                <div class="carousel-caption">
+                    <p>Quiche Lorraine</p>
+                </div>
+            </div>
+            <!-- Tarte Tatin -->
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <img class="d-block" src="../imagens/tarte.png" alt="Tarte Tatin" style="width: 700px;">
+                </div>
+                <div class="carousel-caption">
+                    <p>Tarte Tatin</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles "Anterior" e "Próximo" -->
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Próximo</span>
+        </a>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="container my-3">
+            <div class="row"> <!-- Usando a grid do Bootstrap -->
+                <!-- Div de reserva -->
+                <div class="col-md-6">
+                    <div class="reserva_box">
+                        <div class="reserva__content">
+                            <small>Faça sua</small>
+                            <h2>Reserva</h2>
+                            <p>Realizando a Reserva Online você garante seu lugar com segurança.</p>
+                            <a href="reserva.html" class="reserva__button" id="reservationButton">Faça sua reserva</a>
                         </div>
                     </div>
                 </div>
-                <div class="swiper-pagination releases-pagination"></div>
+                <!-- Div de equipe -->
+                <div class="col-md-6">
+                    <div class="equipe_box">
+                        <div class="equipe__content">
+                            <small>Conheça nossos</small>
+                            <h2>Chefs</h2>
+                            <p>Conheça nossos renomados chefs.</p>
+                            <a href="chefs.html" class="chefs__button" id="EquipeButton">Nossos chefs</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
-    
+    </div>
+
+
+
+    <script>
+        // Script para redirecionar o usuário ao clicar no botão
+        document.getElementById("reservationButton").addEventListener("click", function () {
+            window.location.href = "reserva.html";
+        });
+    </script>
+
 
 
     <footer class="text-light w-100 mt-auto py-4">
