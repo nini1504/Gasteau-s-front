@@ -41,24 +41,36 @@ footer {
 }
 .reserva_box {
     background-image: url('../imagens/rest.png');
-    background-size: cover;
-    background-position: center;
+    background-size: 200%;
+    background-position: left;
+    width: 500px; /* Largura fixa */
+    height: 300px; /* Altura fixa */
     padding: 50px;
     color: white;
     text-align: left;
-    border-radius: 10px;
+    font-size: 15px;
 }
+
+
 .equipe_box {
     background-image: url('../imagens/chefs.png');
     background-size: cover;
-    background-position: center;
+    background-position: right;
     padding: 50px;
     color: white;
-    text-align: left;
-    border-radius: 10px;
-}
+    text-align: left;}
 
-.reserva__button {
+.reserva_button {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+.chefs_button {
     background-color: #ff9800;
     color: white;
     padding: 10px 20px;
