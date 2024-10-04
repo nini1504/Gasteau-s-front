@@ -3,27 +3,33 @@
 
 <head>
     <meta charset="UTF-8">
-    <title> Reserva </title>
-    <link rel="icon" href="../imagens/user.png" type="image/png">
-    <link rel="stylesheet" href="styleReserva.css" type="text/css">
-    <script src="cadastroResv.js"></script>
+    <title> Login </title>
+    <link rel="icon" href="../imagens/login.png" type="image/png">
+    <link rel="stylesheet" href="styleLogin.css" type="text/css">
+    <script src="login.js"></script>
+
 </head>
 
 <body>
+    
     <div class="caixa">
-        <h1 style="text-align:center; color: black">Cadastro de reserva </h1>
+        <h1 style="text-align:center; color: black"> Entre ou cadastre-se </h1>
+        <label for="login"><b>CPF:</b> </label>
+        <input type="text" id="login"/><br><br>
+        <label for="senha"><b>Senha: </b></label>
+        <input type="password" id="senha"/><br><br>
+        <button onclick="logar()">Entrar</button> 
+        <button onclick="redirecionarCadastro()">Fazer cadastro</button>
 
-        <label for="mesa"><b>Mesa:</b> </label>
-        <input type="number" id="mesa"/><br><br>
-
-        <label for="qtdP"><b>Quantidade de pessoas:</b> </label>
-        <input type="number" id="qtdP"/><br><br>
-
-        <label for="dt"><b>Data e horário:</b> </label>
-        <input type="datetime-local" id="dt"/><br><br>
-
-        <button onclick="cadastrarReserva()">Concluir reserva</button> 
+        <!-- Div para exibir as mensagens de erro ou sucesso -->
+        <div id="mensagem" style="margin-top: 10px; color: red;"></div>
     </div>
+    
+    <script> 
+        function redirecionarCadastro(){
+            window.location.href = "cadastro.html";
+        }
+    </script>
 </body>
 
 </html>

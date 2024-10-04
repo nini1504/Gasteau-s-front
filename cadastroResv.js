@@ -2,25 +2,23 @@ const reservaUrl = 'http://localhost:8080/reserva'; // URL do back-end para rese
 
 async function cadastrarReserva() {
     const token = localStorage.getItem('token');  // Recupera o token JWT do localStorage
-    const nome = document.getElementById('nome').value;
-    const cpf = document.getElementById('cpf').value;
-    const telefone = document.getElementById('tel').value;
-    const qtdPessoas = document.getElementById('qtdPessoas').value;
-    const dataHora = document.getElementById('dataHora').value;
+    const mesa = document.getElementById('mesa').value;
+    const qtdPessoas = document.getElementById('qtdP').value;
+    const dataHora = document.getElementById('dt').value;
 
     // Verifica se todos os campos foram preenchidos
-    if (!nome || !cpf || !telefone || !qtdPessoas || !dataHora) {
+    if (!mesa || !qtdPessoas || !dataHora) {
         alert('Por favor, preencha todos os campos!');
         return;
     }
 
     const reservaData = {
-        nome,
-        cpf,
-        telefone,
-        qtdPessoas,
-        dataHora
+        mesa: parseInt(mesa),  // Certifique-se de que 'mesa' é um número inteiro
+        qtd: parseInt(qtdPessoas),  // 'qtd' corresponde à quantidade de pessoas
+        dataHora: new Date(dataHora).toISOString()  // Converte data e hora para o formato ISO 8601
     };
+
+    
 
     try {
         const response = await fetch(reservaUrl, {
