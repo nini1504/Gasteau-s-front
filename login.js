@@ -1,26 +1,26 @@
-const apiUrl = 'http://localhost:8080/login'; // Altere o endpoint conforme necessário
+const apiUrl = 'http://localhost:8080/login'; // URL da sua API no back-end
 
-async function login(username, password) {
+async function logar() {
+    const cpf = document.getElementById('login').value;  // Pega o valor do campo CPF
+    const senha = document.getElementById('senha').value;  // Pega o valor do campo senha
+
     try {
         const response = await fetch(apiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({ cpf, senha }),  // Envia CPF e senha
         });
 
         if (!response.ok) {
-            throw new Error('Failed to login');
+            throw new Error('Falha no login');
         }
 
         const data = await response.json();
-        localStorage.setItem('token', data.token); // Armazena o token JWT no localStorage
-        return data;
+        localStorage.setItem('token', data.token);  // Armazena o token JWT no localStorage
+        window.location.href = "home.html";  // Redireciona para a página home
     } catch (error) {
-        console.error('Error logging in:', error);
-        return null;
+        console.error('Erro ao fazer login:', error);
     }
 }
-
-export default login;
