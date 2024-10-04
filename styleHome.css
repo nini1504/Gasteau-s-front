@@ -53,6 +53,8 @@ footer {
 
 
 .equipe_box {
+    width: 500px; /* Largura fixa */
+    height: 300px; /* Altura fixa */
     background-image: url('../imagens/chefs.png');
     background-size: cover;
     background-position: right;
