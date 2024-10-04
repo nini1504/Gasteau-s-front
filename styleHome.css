@@ -31,7 +31,11 @@ body {
     width: 100%;
     font-size: 16px;
 }
-
+.row {
+    display: flex;
+    justify-content: space-between; /* Distribui o espaço automaticamente */
+    align-items: center; /* Alinha verticalmente */
+}
 .card button:hover {
     opacity: 0.7;
 }
@@ -42,28 +46,29 @@ footer {
 .reserva_box {
     background-image: url('../imagens/rest.png');
     background-size: 200%;
-    background-position: left;
-    width: 500px; /* Largura fixa */
-    height: 300px; /* Altura fixa */
+    background-position: center;
+    width: 700px; /* Largura fixa */
+    height: 500px; /* Altura fixa */
     padding: 50px;
     color: white;
     text-align: left;
     font-size: 15px;
 }
 
-
 .equipe_box {
-    width: 500px; /* Largura fixa */
-    height: 300px; /* Altura fixa */
     background-image: url('../imagens/chefs.png');
     background-size: cover;
-    background-position: right;
+    background-position: center;
+    width: 700px; /* Largura fixa */
+    height: 500px; /* Altura fixa */
     padding: 50px;
     color: white;
-    text-align: left;}
+    text-align: left;
+    margin-right: 30px;
+}
 
 .reserva_button {
-    background-color: #ff9800;
+    background-color:rgb(164, 79, 48);
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -73,7 +78,7 @@ footer {
     margin-top: 20px;
 }
 .chefs_button {
-    background-color: #ff9800;
+    background-color:rgb(164, 79, 48);
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -83,6 +88,6 @@ footer {
     margin-top: 20px;
 }
 
-.reserva__button:hover {
-    background-color: #e68900;
+.reserva_button:hover {
+    background-color:rgb(164, 79, 48);
 }
