@@ -6,3 +6,4 @@ function conferirSenha() {
 function cadastrarCliente() {
     window.location.href = "cadastro.html"; // Redireciona para a página de cadastro
 }
+    
