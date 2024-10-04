@@ -43,6 +43,6 @@ async function logar() {
     } catch (error) {
         console.error('Erro ao fazer login:', error);
         // Exibe uma mensagem de erro genérica
-        mensagemDiv.textContent = 'Erro ao fazer login. Tente novamente mais tarde.';
+        mensagemDiv.textContent = 'Erro ao fazer login.';
     }
 }
