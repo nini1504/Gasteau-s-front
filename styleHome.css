@@ -31,11 +31,7 @@ body {
     width: 100%;
     font-size: 16px;
 }
-.row {
-    display: flex;
-    justify-content: space-between; /* Distribui o espaço automaticamente */
-    align-items: center; /* Alinha verticalmente */
-}
+
 .card button:hover {
     opacity: 0.7;
 }
@@ -64,11 +60,11 @@ footer {
     padding: 50px;
     color: white;
     text-align: left;
-    margin-right: 30px;
+    
 }
 
 .reserva_button {
-    background-color:rgb(164, 79, 48);
+    background-color: #ff9800;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -78,7 +74,7 @@ footer {
     margin-top: 20px;
 }
 .chefs_button {
-    background-color:rgb(164, 79, 48);
+    background-color: #ff9800;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -88,6 +84,6 @@ footer {
     margin-top: 20px;
 }
 
-.reserva_button:hover {
-    background-color:rgb(164, 79, 48);
+.reserva_button:hover, .chefs_button:hover {
+    background-color: #e68900;
 }

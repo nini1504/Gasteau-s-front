@@ -19,7 +19,7 @@
             <img src="../imagens/logo.png" width="90" height="90" alt="Logo">
         </a>
         <p class="titulo"><b>Gasteau's </b></p>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
             aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -35,22 +35,22 @@
                     <a class="nav-link" href="#">Pratos</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-bs-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         Categorias
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="#">Entradas</a>
-                        <a class="dropdown-item" href="#">Pratos principais</a>
-                        <a class="dropdown-item" href="#">Sobremesas</a>
-                        <a class="dropdown-item" href="#">Cartela de vinhos</a>
-                        <a class="dropdown-item" href="#">Bebidas</a>
-                    </div>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item" href="#">Entradas</a></li>
+                        <li><a class="dropdown-item" href="#">Pratos principais</a></li>
+                        <li><a class="dropdown-item" href="#">Sobremesas</a></li>
+                        <li><a class="dropdown-item" href="#">Cartela de vinhos</a></li>
+                        <li><a class="dropdown-item" href="#">Bebidas</a></li>
+                    </ul>
                 </li>
             </ul>
-            <form class="form-inline ml-auto">
-                <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+            <form class="d-flex ms-auto">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+                <button class="btn btn-outline-success" type="submit">
                     <i class="fas fa-search"></i> <!-- Ícone de lupa -->
                 </button>
             </form>
@@ -135,18 +135,14 @@
         <div class="row justify-content-center"> <!-- Usando a grid do Bootstrap -->
             <!-- Div de reserva -->
             <div class="col-md-5 me-5 md-5 mb-3 reserva_box"> <!-- Adiciona margem à direita e embaixo -->
-                <small>Faça sua</small>
-                <h2>Reserva</h2>
-                <p>Realizando a Reserva Online você garante seu lugar com segurança.</p>
-                <a href="reserva.html" class="btn btn-warning" id="reserva_button">Faça sua reserva</a>
+                <h1>Reservas</h1>
+                <a href="reserva.html" class="reserva_button" id="reservationButton">Faça sua reserva</a>
             </div>
 
             <!-- Div de equipe -->
             <div class="col-md-5 ms-5 md-5 mb-3 equipe_box"> <!-- Adiciona margem à esquerda e embaixo -->
-                <small>Conheça nossos</small>
-                <h2>Chefs</h2>
-                <p>Conheça nossos renomados chefs.</p>
-                <a href="chefs.html" class="btn btn-warning" id="chefs_button">Nossos chefs</a>
+                <h1>Chefs</h1>
+                <a href="chefs.html" class="chefs_button" id="EquipeButton">Conheça nossos chefs</a>
             </div>
         </div>
     </div>
