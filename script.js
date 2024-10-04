@@ -1,4 +1,4 @@
-function conferirSenha() {
+function Logar() {
     window.location.href = "home.html"; // Redireciona para a página home
 }
 
@@ -6,4 +6,10 @@ function conferirSenha() {
 function cadastrarCliente() {
     window.location.href = "cadastro.html"; // Redireciona para a página de cadastro
 }
+
+function cadastrarReserva() {
+    window.location.href = "reserva.html"; // Redireciona para a página de cadastro
+}
+
+
     
