@@ -1,0 +1,78 @@
+body {
+    background-color: rgb(219, 213, 197);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo do cabeçalho */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(164, 79, 48);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center; 
+}
+
+/* Título no cabeçalho */
+.titulo {
+    font-size: 40px;
+    color: rgb(219, 213, 197);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    
+}
+
+/* Botão "Adicionar Prato" */
+.add-prato {
+    font-size: 16px;
+    padding: 10px 20px;
+    color: white;
+    background-color: #ff9800;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-prato:hover {
+    background-color: #e68900;
+}
+
+/* Cartão de prato */
+.card {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Botões de adicionar/remover prato dentro dos cartões */
+.botoes {
+    display: flex;
+    flex-direction:row-reverse;
+    align-items:end;
+    padding: 10px;
+}
+
+.card button {
+    width: 8%;
+    padding: 10px;
+    margin: 5px 0;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(164, 79, 48);
+    cursor: pointer;
+}
+
+.card button:hover {
+    opacity: 0.8;
+}

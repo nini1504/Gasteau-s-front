@@ -3,20 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pratos Mais Bem Avaliados</title>
-    <link rel="stylesheet" href="stylehome.css">
+    <title>Pratos</title>
+    <link rel="stylesheet" href="stylePratos.css">
+    <script src="pratos.js"></script>
 </head>
 <body>
-    <h2 class="pratos">Pratos Mais Bem Avaliados</h2>
+    <header class="header">
+        <h1 class="titulo">Pratos</h1>
+        <button class="add-prato" onclick="adicionarPrato()">Adicionar Prato</button>
+    </header>
+
+    
     <div class="card">
         <h3>Nome do Prato</h3>
         <p>Descrição breve do prato...</p>
-        <button>Ver Detalhes</button>
+       
+        
+        
+        <div class="botoes">
+            
+            <button onclick="removerPrato()">-</button>
+        </div>
     </div>
+
+    
     <div class="card">
         <h3>Nome do Prato</h3>
         <p>Descrição breve do prato...</p>
-        <button>Ver Detalhes</button>
+       
+    
+        <div class="botoes">
+          
+            <button onclick="removerPrato()">-</button>
+        </div>
     </div>
+
+        
 </body>
 </html>
