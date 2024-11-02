@@ -1,0 +1,71 @@
+body {
+    background-color: rgb(164, 79, 48);
+    font-family: Arial, sans-serif;
+}
+
+.caixa {
+    width: 500px;
+    height: auto; 
+    background-color: whitesmoke;
+    margin-top: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.caixa h1, .caixa h2 {
+    text-align: center;
+    color: black;
+}
+
+
+label {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: left;
+    margin-left: 15%; /* Alinha o label com a largura do input */
+    color: #333;
+}
+
+
+input[type="text"] {
+    width: 70%;
+    padding: 8px;
+    margin: 5px auto 15px 15%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    display: block;
+}
+
+
+button {
+    padding: 10px 10px;
+    font-size: 14px;
+    display: block;
+    width: 30%;
+    margin: 10px auto;
+    border-radius: 20px;
+    color: white;
+    background-color: rgb(164, 79, 48); 
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #b35f35; 
+}
+
+/* Formulário de atualização */
+#atualizarForm {
+    margin-top: 20px;
+}
