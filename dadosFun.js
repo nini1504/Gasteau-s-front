@@ -42,15 +42,5 @@ function mostrarCurriculo() {
 }
 
 
-function apagarInformacoes() {
-    document.getElementById("nome").textContent = "Nome: ";
-    document.getElementById("cpf").textContent = "CPF: ";
-    document.getElementById("telefone").textContent = "Telefone: ";
-    document.getElementById("salario").textContent = "Salário: ";
-    document.getElementById("data_contratacao").textContent = "Data de Contratação: ";
-    document.getElementById("funcao").textContent = "Função: ";
-    console.log("Informações apagadas da tela");
-}
-
 // Carrega os dados do funcionário quando a página termina de carregar
 window.onload = carregarDadosFuncionario;

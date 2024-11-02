@@ -30,8 +30,8 @@ async function logar() {
         }
 
         const data = await response.json();
-        localStorage.setItem('funcionarioCpf', cpf); // Armazena o CPF//setItem('clienteCpf', cpf);
-        window.location.href = "dadosCli.html"; // Redireciona para a "home"
+        localStorage.setItem('funcionarioCpf', cpf); // Armazena o CPF
+        window.location.href = "home.html"; // Redireciona para a "home"
     } catch (error) {
         console.error('Erro ao fazer login:', error);
         mensagemDiv.textContent = 'Erro ao fazer login.';
