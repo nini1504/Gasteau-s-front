@@ -1,3 +1,4 @@
+/* Fundo da página */
 body {
     background-color: rgb(219, 213, 197);
     font-family: Arial, sans-serif;
@@ -9,7 +10,7 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    
     padding: 20px;
     background-color: rgb(164, 79, 48);
     color: white;
@@ -23,13 +24,14 @@ body {
     color: rgb(219, 213, 197);
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0;
-    
+    align-self: center;
+    align-content: center;
 }
 
 /* Botão "Adicionar Prato" */
 .add-prato {
     font-size: 16px;
-    padding: 10px 20px;
+    padding: 5px 10px;
     color: white;
     background-color: #ff9800;
     border: none;
@@ -75,4 +77,9 @@ body {
 
 .card button:hover {
     opacity: 0.8;
+}
+
+div{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: justify;
 }
