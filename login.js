@@ -30,19 +30,10 @@ async function logar() {
         }
 
         const data = await response.json();
-        localStorage.setItem('token', data.token);  // Armazena o token JWT no localStorage
-
-        // Exibe uma mensagem de sucesso
-        mensagemDiv.style.color = 'green'; // Muda a cor da mensagem para verde
-        mensagemDiv.textContent = 'Login realizado com sucesso! Redirecionando...';
-
-        // Redireciona para a página home após um breve atraso
-        setTimeout(() => {
-            window.location.href = "home.html";  // Redireciona para a página home
-        }, 1000); // 1 segundo de atraso para que a mensagem de sucesso seja visível
+        localStorage.setItem('funcionarioCpf', cpf); // Armazena o CPF//setItem('clienteCpf', cpf);
+        window.location.href = "dadosCli.html"; // Redireciona para a "home"
     } catch (error) {
         console.error('Erro ao fazer login:', error);
-        // Exibe uma mensagem de erro genérica
         mensagemDiv.textContent = 'Erro ao fazer login.';
     }
 }
