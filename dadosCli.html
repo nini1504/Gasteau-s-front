@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleDadosCli.css" type="text/css">
+    <title>Dados Cliente</title> 
+</head>
+<body>
+    <div class="caixa">
+        <h1 style="text-align:center; color: black"> Dados do cliente </h1>
+        <h2>Lista dos dados:</h2>
+        <p id="nome"></p>
+        <p id="cpf"></p>
+        <p id="telefone"></p>
+        <img id="foto" src="" alt="Foto do cliente" style="width:150px; height:auto;">
+
+        <!-- Botão para exibir o formulário de atualização -->
+        <button type="button" onclick="mostrarFormularioAtualizacao()">Atualizar Dados</button>
+
+        <!-- Formulário de atualização de dados, inicialmente oculto -->
+        <div id="atualizarForm" style="display: none;">
+            <h2>Atualizar Dados:</h2>
+            <form>
+                
+                <label for="novoTelefone">Telefone:</label>
+                <input type="text" id="novoTelefone" name="novoTelefone"><br><br>
+
+                <button type="button" onclick="atualizarDados()">Salvar Alterações</button>
+                <button type="button" onclick="apagarInformacoes()">Apagar conta</button>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="dadosCli.js"></script>
+</body>
+</html>
