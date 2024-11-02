@@ -25,6 +25,13 @@ async function cadastrarFuncionario() {
 
         if (!response.ok) throw new Error('Erro ao cadastrar funcionário');
         alert('Cadastro de funcionário realizado com sucesso!');
+
+        // Armazena o CPF no localStorage para ser usado na página de dados
+        localStorage.setItem("funcionarioCpf", cpf);
+
+        // Redireciona para a página de dados do funcionário
+        window.location.href = "dadosFun.html";
+
     } catch (error) {
         console.error('Erro ao cadastrar funcionário:', error);
         alert('Erro ao realizar cadastro.');
