@@ -36,6 +36,37 @@ body {
     opacity: 0.7;
 }
 
+.botao-perfil { 
+    border: none;
+    padding: 8px 15px; 
+    color: white;
+    background-color: rgb(164, 79, 48);
+    text-align: center;
+    cursor: pointer;
+    width: auto; 
+    font-size: 14px; 
+    margin-top: 5px;
+}
+
+.botao-perfil:hover {
+    opacity: 0.7;
+}
+
+/* Estilização da div de opções de perfil */
+#perfilOptions {
+    position: absolute;
+    top: 60px; /* Ajuste de acordo com a posição desejada */
+    right: 20px; /* Posição no lado direito da tela */
+    display: none;
+    flex-direction: column; /* Colocar os botões em coluna */
+    align-items: flex-end; /* Alinhamento dos botões à direita */
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 footer {
     background-color: rgb(164, 79, 48);
 }

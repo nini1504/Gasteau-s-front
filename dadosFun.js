@@ -36,5 +36,10 @@ function mostrarCurriculo() {
     window.open(`/curriculos/${funcionarioNroCarteira}.pdf`, "_blank");
 }
 
+// Função para voltar para a página home
+function voltarHome() {
+    window.location.href = 'home.html'; // Redireciona para home.html
+}
+
 // Carrega os dados quando a página termina de carregar
 window.onload = carregarDadosFuncionario;
