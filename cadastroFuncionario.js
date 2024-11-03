@@ -33,7 +33,7 @@ async function cadastrarFuncionario() {
         localStorage.setItem("nrocarteira", nrocarteira);
 
         // Redireciona para a home
-        window.location.href = "home.html";
+        window.location.href = "home.html";//ver se pode redirecionar para a página de dados dele
 
     } catch (error) {
         console.error('Erro ao cadastrar funcionário:', error);
