@@ -19,26 +19,39 @@
     }
   }
 
-  // Função para atualizar um prato
-  async function atualizarPrato() {
-    try {
-      const response = await fetch('/atualizar-prato', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ /* dados do prato para atualizar */ })
-      });
-      const result = await response.json();
+  async function atualizarPrato(cod) {
+    const dadosPrato = {
+        nome: document.getElementById("nomePrato").value,
+        preco: parseFloat(document.getElementById("preco").value) || 0,
+        descricao: document.getElementById("descricao").value,
+    };
 
-      if (response.ok) {
-        alert('Prato atualizado com sucesso!');
-      } else {
-        alert(result.message || 'Permissão negada. Somente administradores podem atualizar pratos.');
-      }
+    try {
+        const response = await fetch(`/admin/prato/${cod}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
+            },
+            body: JSON.stringify(dadosPrato)
+        });
+
+        if (response.ok) {
+            alert("Prato atualizado com sucesso!");
+            carregarPratos();
+        } else if (response.status === 403) {
+            alert("Acesso negado: você não tem permissão para atualizar pratos.");
+        } else if (response.status === 404) {
+            alert("Erro: Prato não encontrado.");
+        } else {
+            console.error("Erro ao atualizar prato:", response.statusText);
+            alert("Erro ao atualizar prato: " + response.statusText);
+        }
     } catch (error) {
-      console.error('Erro ao atualizar o prato:', error);
-      alert('Erro ao processar a requisição.');
+        console.error("Erro na requisição:", error);
+        alert("Erro na requisição: " + error.message);
     }
-  }
+}
 
   // Função para remover um prato
   async function removerPrato() {

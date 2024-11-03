@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pratos</title>
     <link rel="stylesheet" href="stylePratos.css">
-    <script src="pratos.js"></script>
-    <script src="atualizaPratos.js"></script> 
+    <script src="pratos.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -17,112 +16,44 @@
         </div>
     </header>
 
-    <div class="card">
-        <h3>Ratatouille</h3>
-        <p>Uma saborosa combinação de legumes frescos, incluindo berinjela, abobrinha, pimentão, cebola e tomate, cozidos lentamente em azeite de oliva e temperos de ervas da Provença. Ideal como acompanhamento ou prato principal vegetariano.</p>
-           
-       <div class="botoes">
-            
-            <button title="Excluir prato" onclick="removerPrato()">-</button>
-        </div>
-        <div class="card-footer">
-                    
-            <div class="codigo">Código =</div>
-        </div>
-        </div>
+    <div id="pratos-container"></div>
 
-    <div class="card">
-        <h3>Filet de Boeuf</h3>
-        <p>Suculento filé mignon grelhado, servido com um delicioso molho de vinho tinto e cogumelos. Acompanha uma seleção de legumes grelhados e purê de batatas.</p>
-            
-       <div class="botoes">
-          
-            <button title="Excluir prato" onclick="removerPrato()">-</button>
-        </div>
-        <div class="card-footer">
-                    
-            <div class="codigo">Código =</div>
-        </div>
-    </div>
+    <script>
+        // Função para buscar e exibir pratos
+        async function carregarPratos() {
+            try {
+                const response = await fetch('/api/pratos'); // Altere para a rota correta
+                const pratos = await response.json();
+                const pratosContainer = document.getElementById('pratos-container');
 
-    <div class="card">
-        <h3>Quiche Lorraine</h3>
-        <p>Torta salgada recheada com bacon defumado, queijo gruyère, ovos e creme de leite, envoltos em uma crocante massa quebrada. Uma escolha perfeita para qualquer refeição do dia.</p>
-          
-        
-        <div class="botoes">
-          
-            <button title="Excluir prato" onclick="removerPrato()">-</button>
-        </div>
-        <div class="card-footer">
-                    
-            <div class="codigo">Código =</div>
-        </div>
-    </div>
-       
-    <div class="card">
-        <h3>Tarte Tatin</h3>
-        <p>Uma deliciosa torta invertida de maçãs caramelizadas, cobertas com uma crocante massa folhada. Servida quente, é a combinação perfeita com creme de leite ou sorvete.</p>
-            
-       
-        
-        <div class="botoes">
-          
-            <button title="Excluir prato" onclick="removerPrato()">-</button>
-        </div>
+                // Limpa o contêiner antes de adicionar os pratos
+                pratosContainer.innerHTML = '';
 
-        <div class="card-footer">
-                    
-            <div class="codigo">Código =</div>
-        </div>
-    </div>
+                // Cria os cards para cada prato retornado
+                pratos.forEach(prato => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
 
-    <div class="card">
-        <h3>Filet au Poivre</h3>
-        <p>Corte nobre de carne bovina coberto com grãos de pimenta-do-reino e selado até o ponto perfeito. Acompanha um cremoso molho à base de suco da carne e conhaque, servido com purê de batatas.</p>
-           
-        
-        <div class="botoes">
-          
-            <button title="Excluir prato" onclick="removerPrato()">-</button>
-        </div>
+                    card.innerHTML = `
+                        <h3>${prato.nome}</h3>
+                        <p>${prato.descricao}</p>
+                        <div class="botoes">
+                            <button title="Excluir prato" onclick="removerPrato(${prato.id})">-</button>
+                        </div>
+                        <div class="card-footer">
+                            <div class="codigo">Código = ${prato.id}</div>
+                        </div>
+                    `;
 
-        <div class="card-footer">
-                    
-            <div class="codigo">Código =</div>
-        </div>
-    </div>
+                    pratosContainer.appendChild(card);
+                });
+            } catch (error) {
+                console.error('Erro ao carregar os pratos:', error);
+            }
+        }
 
-    <div class="card">
-        <h3>Crêpe Suzette</h3>
-        <p>Finíssimas panquecas flambadas, servidas com um molho de manteiga, açúcar, suco de laranja e licor Grand Marnier. Um toque de elegância e sabor à sua sobremesa.</p>
-            
-       
-        
-        <div class="botoes">
-          
-            <button title="Excluir prato" onclick="removerPrato()">-</button>
-        </div>
-        <div class="card-footer">
-                
-            <div class="codigo">Código =</div>
-        </div>
-    </div>
-
-    <div class="card">
-        <h3>Chou Farci</h3>
-        <p>Repolho recheado com uma saborosa mistura de carne moída de porco e boi, arroz e temperos, cozido lentamente até a perfeição. Servido com um rico molho à base de tomate.</p>
-           
-        
-            <div class="botoes">
-          
-                <button title="Excluir prato" onclick="removerPrato()">-</button>
-            </div>
-            <div class="card-footer">
-                    
-                <div class="codigo">Código =</div>
-            </div>
-          
-    </div>
+        // Chama a função para carregar pratos ao iniciar a página
+        document.addEventListener('DOMContentLoaded', carregarPratos);
+    </script>
 </body>
 </html>
