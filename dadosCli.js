@@ -38,18 +38,13 @@ function mostrarFormularioAtualizacao() {
 // Função para atualizar o telefone do cliente
 async function atualizarDados() {
     const novoTelefone = document.getElementById("novoTelefone").value;
-    const clienteCpf = localStorage.getItem("clienteCpf");
-
-    const dadosAtualizados = { telefone: novoTelefone };
 
     try {
-        const response = await fetch(`http://localhost:8080/clientes/${clienteCpf}`, { // Ajuste a URL conforme necessário
+        const response = await fetch(`http://localhost:8080/user/atualizar-telefone?novoTelefone=${encodeURIComponent(novoTelefone)}`, {
             method: "PUT",
             headers: {
-                "Content-Type": "application/json",
                 'Authorization': 'Bearer ' + localStorage.getItem("token") // Adiciona o token
-            },
-            body: JSON.stringify(dadosAtualizados)
+            }
         });
 
         if (response.ok) {
@@ -89,10 +84,8 @@ async function excluirReserva() {
 
 // Função para excluir a conta do cliente
 async function excluirConta() {
-    const clienteCpf = localStorage.getItem("clienteCpf");
-
     try {
-        const response = await fetch(`http://localhost:8080/clientes/${clienteCpf}`, {
+        const response = await fetch(`http://localhost:8080/user`, {
             method: "DELETE",
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem("token") // Adiciona o token
@@ -101,10 +94,11 @@ async function excluirConta() {
 
         if (response.ok) {
             console.log("Conta excluída com sucesso");
-            // Opcional: Redirecionar para a página de login ou outra página
-            localStorage.removeItem("clienteCpf"); // Remove o CPF do localStorage
-            localStorage.removeItem("token"); // Remove o token do localStorage
-            window.location.href = "login.html"; // Redireciona para a página de login
+            // Remove informações do localStorage
+            localStorage.removeItem("clienteCpf");
+            localStorage.removeItem("token");
+            // Redireciona para a página de login
+            window.location.href = "login.html"; 
         } else {
             console.error("Erro ao excluir a conta");
         }
