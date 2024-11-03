@@ -7,7 +7,9 @@ async function carregarDadosFuncionario() {
     }
 
     try { 
-        const response = await fetch(`http://localhost:8080/admin/${funcionarioNroCarteira}`);
+        
+        const response = await fetch('http://localhost:8080/admin');
+
         if (response.ok) {
             const funcionario = await response.json();
 
