@@ -7,7 +7,7 @@ async function carregarDadosFuncionario() {
     }
 
     try {
-        const response = await fetch(`/api/funcionarios/${funcionarioCpf}`);
+        const response = await fetch(`/admin`);
         if (response.ok) {
             const funcionario = await response.json();
             document.getElementById("nome").textContent = `Nome: ${funcionario.nome}`;

@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 const apiUrl = 'http://localhost:8080/login'; // URL da sua API no back-end
 
+=======
+const apiUrl = 'http://localhost:8080/user'; // URL da sua API no back-end
+>>>>>>> 480473a09a78b0ad25af7adedde4dd2dd61d06fe
 // Função para buscar e exibir os dados do cliente com o CPF após o login
 async function carregarDadosCliente() {
     const clienteCpf = localStorage.getItem("clienteCpf"); // Obter CPF do localStorage
@@ -9,13 +13,13 @@ async function carregarDadosCliente() {
     }
 
     try {
-        const response = await fetch(`/api/clientes/${clienteCpf}`);
+        const response = await fetch(`http://localhost:8080/user`);
         if (response.ok) {
             const cliente = await response.json();
             document.getElementById("nome").textContent = `Nome: ${cliente.nome}`;
             document.getElementById("cpf").textContent = `CPF: ${cliente.cpf}`;
             document.getElementById("telefone").textContent = `Telefone: ${cliente.telefone}`;
-            document.getElementById("foto").src = cliente.foto;
+            //document.getElementById("foto").src = cliente.foto;
         } else {
             console.error("Erro ao buscar dados do cliente");
         }

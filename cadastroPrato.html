@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title> Cadastro de Prato </title>
+    <link rel="icon" href="../imagens/user.png" type="image/png">
+    <link rel="stylesheet" href="styleCadastro.css" type="text/css">
+    <script src="cadastroPrato.js"></script> <!-- Alterado para o script específico do cadastro de prato -->
+
+</head>
+
+<body>
+    
+    <div class="caixa">
+        <h1 style="text-align:center; color: black">Cadastro de Prato</h1>
+        
+        <label for="nomePrato"><b>Nome do Prato:</b> </label>
+        <input type="text" id="nomePrato" required/><br><br>
+
+        <label for="ingredientes"><b>Ingredientes:</b> </label>
+        <input id="ingredientes" rows="5" required><br><br>
+
+        <button onclick="cadastrarPrato()">Concluir Cadastro</button> 
+    </div>
+
+</body>
+
+</html>

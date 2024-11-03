@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:8080/login/user'; // URL da sua API no back-end
+const apiUrl = 'http://localhost:8080/login/cliente';
 
 async function logar() {
     const cpf = document.getElementById('login').value;  // Pega o valor do campo CPF
