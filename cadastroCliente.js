@@ -37,6 +37,7 @@ async function cadastrarCliente() {
         if (!response.ok) throw new Error('Erro ao cadastrar cliente');
 
         alert('Cadastro de cliente realizado com sucesso!');
+        localStorage.setItem("clienteCpf",cpf);
         window.location.href = "dadosCli.html";
     } catch (error) {
         console.error('Erro ao cadastrar cliente:', error);
