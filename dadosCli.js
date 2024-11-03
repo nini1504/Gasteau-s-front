@@ -1,4 +1,5 @@
 const apiUrl = 'http://localhost:8080/user'; // URL da sua API no back-end
+
 // Função para buscar e exibir os dados do cliente com o CPF após o login
 async function carregarDadosCliente() {
     const clienteCpf = localStorage.getItem("clienteCpf"); // Obter CPF do localStorage
@@ -8,13 +9,18 @@ async function carregarDadosCliente() {
     }
 
     try {
-        const response = await fetch(`http://localhost:8080/user`);
+        const response = await fetch(`http://localhost:8080/user`, {
+            method: 'GET',
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem("token") // Adiciona o token
+            }
+        });
         if (response.ok) {
             const cliente = await response.json();
             document.getElementById("nome").textContent = `Nome: ${cliente.nome}`;
             document.getElementById("cpf").textContent = `CPF: ${cliente.cpf}`;
             document.getElementById("telefone").textContent = `Telefone: ${cliente.telefone}`;
-            //document.getElementById("foto").src = cliente.foto;
+            // document.getElementById("foto").src = cliente.foto;
         } else {
             console.error("Erro ao buscar dados do cliente");
         }
@@ -37,10 +43,11 @@ async function atualizarDados() {
     const dadosAtualizados = { telefone: novoTelefone };
 
     try {
-        const response = await fetch(`/api/clientes/${clienteCpf}`, {
+        const response = await fetch(`http://localhost:8080/clientes/${clienteCpf}`, { // Ajuste a URL conforme necessário
             method: "PUT",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                'Authorization': 'Bearer ' + localStorage.getItem("token") // Adiciona o token
             },
             body: JSON.stringify(dadosAtualizados)
         });
@@ -62,8 +69,11 @@ async function excluirReserva() {
     const clienteCpf = localStorage.getItem("clienteCpf");
 
     try {
-        const response = await fetch(`/api/clientes/${clienteCpf}/reserva`, {
-            method: "DELETE"
+        const response = await fetch(`http://localhost:8080/clientes/${clienteCpf}/reserva`, {
+            method: "DELETE",
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem("token") // Adiciona o token
+            }
         });
 
         if (response.ok) {
@@ -71,6 +81,32 @@ async function excluirReserva() {
             // Opcional: Redirecionar ou atualizar a página
         } else {
             console.error("Erro ao excluir a reserva");
+        }
+    } catch (error) {
+        console.error("Erro de conexão:", error);
+    }
+}
+
+// Função para excluir a conta do cliente
+async function excluirConta() {
+    const clienteCpf = localStorage.getItem("clienteCpf");
+
+    try {
+        const response = await fetch(`http://localhost:8080/clientes/${clienteCpf}`, {
+            method: "DELETE",
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem("token") // Adiciona o token
+            }
+        });
+
+        if (response.ok) {
+            console.log("Conta excluída com sucesso");
+            // Opcional: Redirecionar para a página de login ou outra página
+            localStorage.removeItem("clienteCpf"); // Remove o CPF do localStorage
+            localStorage.removeItem("token"); // Remove o token do localStorage
+            window.location.href = "login.html"; // Redireciona para a página de login
+        } else {
+            console.error("Erro ao excluir a conta");
         }
     } catch (error) {
         console.error("Erro de conexão:", error);
