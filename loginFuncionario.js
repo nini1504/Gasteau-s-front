@@ -20,7 +20,7 @@ async function logar() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ nrocarteira, senha }),  //resolver isso, pede para o chat ver a questao de tipo e manda essa parte do back tbm
+            body: JSON.stringify({ nroCarteira: Number(nrocarteira), senha }), //jeito que o chat disse para resolver
         });
 
         if (!response.ok) {
