@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-const apiUrl = 'http://localhost:8080/login'; // URL da sua API no back-end
-
-=======
 const apiUrl = 'http://localhost:8080/user'; // URL da sua API no back-end
->>>>>>> 480473a09a78b0ad25af7adedde4dd2dd61d06fe
 // Função para buscar e exibir os dados do cliente com o CPF após o login
 async function carregarDadosCliente() {
     const clienteCpf = localStorage.getItem("clienteCpf"); // Obter CPF do localStorage
