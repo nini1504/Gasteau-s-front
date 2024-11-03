@@ -29,7 +29,7 @@ async function cadastrarFuncionario() {
         if (!response.ok) throw new Error('Erro ao cadastrar funcionário');
         alert('Cadastro de funcionário realizado com sucesso!');
 
-        // Armazena o CPF no localStorage para ser usado na página de dados
+        // Armazena o nrocarteira no localStorage 
         localStorage.setItem("nrocarteira", nrocarteira);
 
         // Redireciona para a home
