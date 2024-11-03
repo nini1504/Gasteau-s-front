@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <title> Cadastro de Prato </title>
     <link rel="icon" href="../imagens/user.png" type="image/png">
-    <link rel="stylesheet" href="styleCadastro.css" type="text/css">
-    <script src="cadastroPrato.js"></script> <!-- Alterado para o script específico do cadastro de prato -->
+    <link rel="stylesheet" href="styleAtualizaPrato.css" type="text/css">
+    <script src="cadastroPrato.js"></script> 
 
 </head>
 
@@ -15,11 +15,25 @@
     <div class="caixa">
         <h1 style="text-align:center; color: black">Cadastro de Prato</h1>
         
-        <label for="nomePrato"><b>Nome do Prato:</b> </label>
+        <label for="idPrato">ID do Prato:</label>
+        <input type="text" id="idPrato" name="idPrato" required /><br><br>
+
+        <label for="nomePrato">Nome do Prato: </label>
         <input type="text" id="nomePrato" required/><br><br>
 
-        <label for="ingredientes"><b>Ingredientes:</b> </label>
-        <input id="ingredientes" rows="5" required><br><br>
+        <label for="preco">Preço:</label>
+        <input type="number" step="0.01" id="preco" name="preco" /><br><br>
+
+        <label for="avaliacaoMed">Avaliação Média:</label>
+        <input type="number" step="0.1" min="0" max="5" id="avaliacaoMed" name="avaliacaoMed" /><br><br>
+
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao"></textarea><br><br>
+
+        <label for="modoPreparo">Modo de Preparo:</label>
+        <textarea id="modoPreparo" name="modoPreparo"></textarea><br><br>
+
+        
 
         <button onclick="cadastrarPrato()">Concluir Cadastro</button> 
     </div>

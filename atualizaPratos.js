@@ -1,6 +1,7 @@
 const apiUrlAtualizarPratos = 'http://localhost:8080/admin/prato'; 
 
 async function atualizarPrato() {
+    window.location.href = 'atualizaPratos.html';
     const idPrato = document.getElementById('idPrato').value;
     const nomePrato = document.getElementById('nomePrato').value;
     const preco = document.getElementById('preco').value;

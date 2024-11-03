@@ -6,105 +6,123 @@
     <title>Pratos</title>
     <link rel="stylesheet" href="stylePratos.css">
     <script src="pratos.js"></script>
+    <script src="atualizaPratos.js"></script> 
 </head>
 <body>
     <header class="header">
         <h1 class="titulo">Pratos</h1>
-        <button class="add-prato" onclick="adicionarPrato()">Adicionar Prato</button>
+        <div class="botoes-container"> 
+            <button class="add-prato" onclick="cadastrarPrato()">Adicionar Prato</button>
+            <button class="atz-prato" onclick="atualizarPrato()">Atualizar Prato</button>
+        </div>
     </header>
 
-    <!-- Exemplo de prato -->
     <div class="card">
         <h3>Ratatouille</h3>
         <p>Uma saborosa combinação de legumes frescos, incluindo berinjela, abobrinha, pimentão, cebola e tomate, cozidos lentamente em azeite de oliva e temperos de ervas da Provença. Ideal como acompanhamento ou prato principal vegetariano.</p>
-            Ingredientes: Berinjela, abobrinha, pimentão, cebola, tomate, azeite de oliva, ervas da Provença.</p>
-       
-        
-        <!-- Botões de adicionar e remover prato -->
-        <div class="botoes">
+           
+       <div class="botoes">
             
-            <button onclick="removerPrato()">-</button>
+            <button title="Excluir prato" onclick="removerPrato()">-</button>
         </div>
-    </div>
+        <div class="card-footer">
+                    
+            <div class="codigo">Código =</div>
+        </div>
+        </div>
 
-    <!-- Outro exemplo de prato -->
     <div class="card">
         <h3>Filet de Boeuf</h3>
         <p>Suculento filé mignon grelhado, servido com um delicioso molho de vinho tinto e cogumelos. Acompanha uma seleção de legumes grelhados e purê de batatas.</p>
-            <p>Ingredientes: Filé mignon, vinho tinto, cogumelos, manteiga, legumes variados, batatas.</p>
-       
-        
-        <!-- Botões de adicionar e remover prato -->
-        <div class="botoes">
+            
+       <div class="botoes">
           
-            <button onclick="removerPrato()">-</button>
+            <button title="Excluir prato" onclick="removerPrato()">-</button>
+        </div>
+        <div class="card-footer">
+                    
+            <div class="codigo">Código =</div>
         </div>
     </div>
 
     <div class="card">
         <h3>Quiche Lorraine</h3>
         <p>Torta salgada recheada com bacon defumado, queijo gruyère, ovos e creme de leite, envoltos em uma crocante massa quebrada. Uma escolha perfeita para qualquer refeição do dia.</p>
-           <p>Ingredientes: Massa quebrada, bacon, queijo gruyère, ovos, creme de leite, cebola (opcional).</p>
-       
+          
         
-        <!-- Botões de adicionar e remover prato -->
         <div class="botoes">
           
-            <button onclick="removerPrato()">-</button>
+            <button title="Excluir prato" onclick="removerPrato()">-</button>
+        </div>
+        <div class="card-footer">
+                    
+            <div class="codigo">Código =</div>
         </div>
     </div>
        
     <div class="card">
         <h3>Tarte Tatin</h3>
         <p>Uma deliciosa torta invertida de maçãs caramelizadas, cobertas com uma crocante massa folhada. Servida quente, é a combinação perfeita com creme de leite ou sorvete.</p>
-            <p>Ingredientes: Maçãs, açúcar, manteiga, massa folhada.</p>
+            
        
         
-        <!-- Botões de adicionar e remover prato -->
         <div class="botoes">
           
-            <button onclick="removerPrato()">-</button>
+            <button title="Excluir prato" onclick="removerPrato()">-</button>
+        </div>
+
+        <div class="card-footer">
+                    
+            <div class="codigo">Código =</div>
         </div>
     </div>
 
     <div class="card">
         <h3>Filet au Poivre</h3>
         <p>Corte nobre de carne bovina coberto com grãos de pimenta-do-reino e selado até o ponto perfeito. Acompanha um cremoso molho à base de suco da carne e conhaque, servido com purê de batatas.</p>
-           <p>Ingredientes: Filé de carne, pimenta-do-reino, conhaque, creme de leite, manteiga, purê de batatas.</p>
-       
+           
         
-        <!-- Botões de adicionar e remover prato -->
         <div class="botoes">
           
-            <button onclick="removerPrato()">-</button>
+            <button title="Excluir prato" onclick="removerPrato()">-</button>
+        </div>
+
+        <div class="card-footer">
+                    
+            <div class="codigo">Código =</div>
         </div>
     </div>
 
     <div class="card">
         <h3>Crêpe Suzette</h3>
         <p>Finíssimas panquecas flambadas, servidas com um molho de manteiga, açúcar, suco de laranja e licor Grand Marnier. Um toque de elegância e sabor à sua sobremesa.</p>
-            <p>Ingredientes: Farinha, ovos, leite, manteiga, açúcar, suco de laranja, Grand Marnier.</p>
+            
        
         
-        <!-- Botões de adicionar e remover prato -->
         <div class="botoes">
           
-            <button onclick="removerPrato()">-</button>
+            <button title="Excluir prato" onclick="removerPrato()">-</button>
+        </div>
+        <div class="card-footer">
+                
+            <div class="codigo">Código =</div>
         </div>
     </div>
 
     <div class="card">
         <h3>Chou Farci</h3>
         <p>Repolho recheado com uma saborosa mistura de carne moída de porco e boi, arroz e temperos, cozido lentamente até a perfeição. Servido com um rico molho à base de tomate.</p>
-            <p>Ingredientes: Repolho, carne moída (porco e boi), arroz, cebola, temperos, molho de tomate.</p>
+           
         
-       
-        
-        <!-- Botões de adicionar e remover prato -->
-        <div class="botoes">
+            <div class="botoes">
           
-            <button onclick="removerPrato()">-</button>
-        </div>
+                <button title="Excluir prato" onclick="removerPrato()">-</button>
+            </div>
+            <div class="card-footer">
+                    
+                <div class="codigo">Código =</div>
+            </div>
+          
     </div>
 </body>
 </html>
