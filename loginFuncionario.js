@@ -1,7 +1,7 @@
 const apiUrl = 'http://localhost:8080/login/admin'; // URL da sua API no back-end
 
 async function logar() {
-    const nrocarteira = document.getElementById('login').value;  // Pega o valor do campo CPF
+    const nrocarteira = document.getElementById('login').value;  // Pega o valor do campo nro carteira
     const senha = document.getElementById('senha').value;  // Pega o valor do campo senha
     const mensagemDiv = document.getElementById('mensagem'); // Pega a div para exibir mensagens
 
@@ -20,7 +20,7 @@ async function logar() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ nrocarteira, senha }),  // Envia CPF e senha
+            body: JSON.stringify({ nrocarteira, senha }),  
         });
 
         if (!response.ok) {
