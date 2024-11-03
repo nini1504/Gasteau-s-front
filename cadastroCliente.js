@@ -1,4 +1,4 @@
-const apiUrlCadastroCliente = 'http://localhost:8080/cadastro';
+const apiUrlCadastroCliente = 'http://localhost:8080/cadastro/cliente';
 
 async function cadastrarCliente() {
     const nome = document.getElementById('nomeCliente').value;
@@ -28,8 +28,7 @@ async function cadastrarCliente() {
     try {
         const response = await fetch(apiUrlCadastroCliente, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(clienteData),
+            body: formData, // Enviar o formData diretamente
         });
 
         if (!response.ok) throw new Error('Erro ao cadastrar cliente');
