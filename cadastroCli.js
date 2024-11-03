@@ -1,5 +1,8 @@
 const apiUrlCadastroCliente = 'http://localhost:8080/cadastro';
 
+// Adiciona um listener de evento ao botão
+document.getElementById('cadastrarBtn').addEventListener('click', cadastrarCliente);
+
 async function cadastrarCliente() {
     const nome = document.getElementById('nomeCliente').value;
     const cpf = document.getElementById('cpfCliente').value;
@@ -33,8 +36,9 @@ async function cadastrarCliente() {
         });
 
         if (!response.ok) throw new Error('Erro ao cadastrar cliente');
+
         alert('Cadastro de cliente realizado com sucesso!');
-        window.location.href = "login.html";
+        window.location.href = "dadosCli.html";
     } catch (error) {
         console.error('Erro ao cadastrar cliente:', error);
         alert('Erro ao realizar cadastro.');

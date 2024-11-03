@@ -3,8 +3,9 @@ body{
 }
 
 .caixa {
-    width: 700px;
-    height: 750px;
+    width: 500px;
+    min-height: 600px;
+    padding: 10px;
     background-color: whitesmoke; 
     margin-top: 20px;
     box-sizing: border-box;

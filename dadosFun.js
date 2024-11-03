@@ -37,10 +37,10 @@ function mostrarCurriculo() {
         return;
     }
 
-    // Abre o currículo em uma nova aba (substitua 'curriculos' pelo caminho correto)
-    window.open(`/curriculos/${funcionarioCpf}.pdf`, '_blank');
+   // Abre o currículo em uma nova aba
+   const curriculoUrl = `/curriculos/${funcionarioCpf}.pdf`;
+   window.open(curriculoUrl, '_blank');
 }
-
 
 // Carrega os dados do funcionário quando a página termina de carregar
 window.onload = carregarDadosFuncionario;

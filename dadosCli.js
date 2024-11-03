@@ -1,4 +1,5 @@
 const apiUrl = 'http://localhost:8080/login'; // URL da sua API no back-end
+
 // Função para buscar e exibir os dados do cliente com o CPF após o login
 async function carregarDadosCliente() {
     const clienteCpf = localStorage.getItem("clienteCpf"); // Obter CPF do localStorage
@@ -29,18 +30,12 @@ function mostrarFormularioAtualizacao() {
     form.style.display = form.style.display === "none" ? "block" : "none";
 }
 
-// Função para atualizar os dados do cliente
+// Função para atualizar o telefone do cliente
 async function atualizarDados() {
-    const clienteCpf = localStorage.getItem("clienteCpf");
-    const novoNome = document.getElementById("novoNome").value;
     const novoTelefone = document.getElementById("novoTelefone").value;
-    const novaFoto = document.getElementById("novaFoto").value;
+    const clienteCpf = localStorage.getItem("clienteCpf");
 
-    const dadosAtualizados = {
-        nome: novoNome,
-        telefone: novoTelefone,
-        foto: novaFoto
-    };
+    const dadosAtualizados = { telefone: novoTelefone };
 
     try {
         const response = await fetch(`/api/clientes/${clienteCpf}`, {
@@ -88,9 +83,7 @@ function apagarInformacoes() {
     document.getElementById("nome").textContent = "Nome: ";
     document.getElementById("cpf").textContent = "CPF: ";
     document.getElementById("telefone").textContent = "Telefone: ";
-    document.getElementById("salario").textContent = "Salário: ";
-    document.getElementById("data_contratacao").textContent = "Data de Contratação: ";
-    document.getElementById("funcao").textContent = "Função: ";
+    document.getElementById("foto").src = ""; // Remove a foto
     console.log("Informações apagadas da tela");
 }
 
