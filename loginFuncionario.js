@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:8080/login/admin'; // URL da sua API no back-end
+const apiUrl = 'http://localhost:8080/login/funcionario'; // URL da sua API no back-end
 
 async function logar() {
     const nrocarteira = document.getElementById('login').value;  // Pega o valor do campo nro carteira
@@ -20,7 +20,7 @@ async function logar() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ nrocarteira, senha }),  
+            body: JSON.stringify({ nrocarteira, senha }),  //resolver isso, pede para o chat ver a questao de tipo e manda essa parte do back tbm
         });
 
         if (!response.ok) {
