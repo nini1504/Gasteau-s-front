@@ -7,8 +7,13 @@ async function carregarDadosFuncionario() {
     }
 
     try { 
-        
-        const response = await fetch('http://localhost:8080/admin');
+        // Atualize a URL para incluir o número da carteira e o token
+        const response = await fetch(`http://localhost:8080/funcionario/${funcionarioNroCarteira}`, {
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token')}`, // Inclui o token de autenticação no header
+                'Content-Type': 'application/json'
+            }
+        });
 
         if (response.ok) {
             const funcionario = await response.json();
