@@ -26,6 +26,7 @@ async function carregarDadosCliente() {
             document.getElementById("nome").textContent = `Nome: ${cliente.nome}`;
             document.getElementById("cpf").textContent = `CPF: ${cliente.cpf}`;
             document.getElementById("telefone").textContent = `Telefone: ${cliente.telefone}`;
+            document.getElementById("classificacao").textContent = `Classificação: ${cliente.classificacao}`;
             
             // Verifica se existe foto e, em caso positivo, converte e define no elemento 'foto'
             if (cliente.fotoPerfil) {

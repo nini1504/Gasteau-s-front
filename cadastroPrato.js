@@ -1,13 +1,14 @@
 const apiUrlCadastroPrato = 'http://localhost:8080/admin/prato';
 
+
+
 async function cadastrarPrato() {
     const token = localStorage.getItem('token');
 
-    if (!token) {
-        alert('Você precisa estar logado para cadastrar o prato.');
-        return;
-    }
-
+if (!token) {
+    alert('Você precisa estar logado realizar alterações em prato.');
+    return;
+}
 
     // Coleta dos dados do formulário
     const nome = document.getElementById("nomePrato").value;
@@ -54,26 +55,5 @@ async function cadastrarPrato() {
     } catch (error) {
         console.error("Erro na requisição:", error);
         alert("Erro na requisição: " + error.message);
-    }
-}
-
-
-async function removerPrato(cod) {
-    try {
-        const response = await fetch(`${apiUrlCadastroPrato}/${cod}`, {
-            method: 'DELETE'
-        });
-
-        if (response.status === 204) {
-            alert("Prato removido com sucesso.");
-            carregarPratos(); // Atualiza a lista de pratos após a remoção
-        } else if (response.status === 403) {
-            alert("Somente funcionários têm permissão para excluir pratos.");
-        } else {
-            throw new Error("Erro ao tentar remover o prato.");
-        }
-    } catch (error) {
-        console.error(error);
-        alert("Erro ao remover o prato.");
     }
 }

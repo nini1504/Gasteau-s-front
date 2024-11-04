@@ -1,29 +1,87 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pratos</title>
     <link rel="stylesheet" href="stylePratos.css">
-    <script src="pratos.js" defer></script> 
+    <script src="pratos.js" defer></script>
     <script src="cadastroPrato.js" defer></script>
 </head>
+
 <body>
     <header class="header">
         <h1 class="titulo">Pratos</h1>
-        <div class="botoes-container"> 
-            <button class="add-prato" onclick="window.location.href='cadastroPrato.html'">Adicionar Prato</button>
-            <button class="atz-prato" onclick="window.location.href='atualizaPratos.html'">Atualizar Prato</button>
+        <div class="botoes-container">
+            <button class="add-prato" onclick="verificarPermissaoEAdicionarPrato()">Adicionar Prato</button>
+            <button class="atz-prato" onclick="verificarPermissaoEAtualizarPrato()">Atualizar Prato</button>
         </div>
     </header>
 
-    <div id="listaPratos"></div> 
+    <div id="listaPratos"></div>
 
     <script>
         // chama a função para carregar pratos ao iniciar a página
         document.addEventListener('DOMContentLoaded', () => {
             carregarPratos();
         });
+
+        // Função para verificar se o usuário tem permissão de admin antes de redirecionar
+        async function verificarPermissaoEAdicionarPrato() {
+            const token = localStorage.getItem('token'); // Recupera o token do localStorage
+            if (!token) {
+                alert('Usuario nao logado');
+                return;
+            }
+
+            try {
+                const response = await fetch("http://localhost:8080/admin", {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (response.ok) {
+                    window.location.href = 'cadastroPrato.html'; // Redireciona para o formulário de adicionar prato
+                } else {
+                    alert('Você não tem permissão para adicionar pratos.');
+                }
+            } catch (error) {
+                console.error("Erro ao verificar permissão:", error);
+                alert("Erro ao verificar permissão.");
+            }
+        }
+
+        // Função para verificar se o usuário tem permissão de admin antes de redirecionar
+        async function verificarPermissaoEAtualizarPrato() {
+            const token = localStorage.getItem('token'); // Recupera o token do localStorage
+            if (!token) {
+                alert('Usuario nao logado');
+                return;
+            }
+
+            try {
+                const response = await fetch("http://localhost:8080/admin",{
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (response.ok) {
+                    window.location.href =
+                    'atualizaPratos.html'; // Redireciona para o formulário de atualizar prato
+                } else {
+                    alert('Você não tem permissão para atualizar pratos.');
+                }
+            } catch (error) {
+                console.error("Erro ao verificar permissão:", error);
+                alert("Erro ao verificar permissão.");
+            }
+        }
     </script>
 </body>
+
 </html>

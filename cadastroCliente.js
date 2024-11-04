@@ -40,7 +40,7 @@ async function cadastrarCliente() {
 
         alert('Cadastro de cliente realizado com sucesso!');
         localStorage.setItem("clienteCpf", cpf);
-        window.location.href = "dadosCli.html";
+        window.location.href = "home.html";
     } catch (error) {
         console.error('Erro ao cadastrar cliente:', error);
         alert('Erro ao realizar cadastro.');
