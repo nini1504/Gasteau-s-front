@@ -1,41 +1,9 @@
-const apiUrlPratos = 'http://localhost:8080'; 
-async function cadastrarPrato() {
-    window.location.href = 'cadastroPrato.html';
-    
-    const dadosPrato = {
-        nome: document.getElementById("nomePrato").value,
-        preco: parseFloat(document.getElementById("preco").value) || 0,
-        descricao: document.getElementById("descricao").value,
-        modoPreparo: document.getElementById("modoPreparo").value,
-    };
-
-    try {
-        const response = await fetch('/admin/prato', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(dadosPrato)
-        });
-
-        if (response.ok) {
-            alert("Prato cadastrado com sucesso!");
-            carregarPratos(); // Atualiza a lista de pratos após o cadastro
-        } else {
-            console.error("Erro ao cadastrar prato:", response.statusText);
-            alert("Erro ao cadastrar prato: " + response.statusText);
-        }
-    } catch (error) {
-        console.error("Erro na requisição:", error);
-        alert("Erro na requisição: " + error.message);
-    }
-}
-
+const apiUrlPratos = 'http://localhost:8080/pratos'; // atualizando a URL da API
 
 // Função para buscar os pratos da API
 async function carregarPratos() {
     try {
-        const response = await fetch('/pratos'); // Faz uma requisição GET para obter os pratos
+        const response = await fetch(apiUrlPratos); // Faz uma requisição GET para obter os pratos
         if (response.ok) {
             const pratos = await response.json();
             exibirPratos(pratos);
@@ -49,7 +17,7 @@ async function carregarPratos() {
 
 // Função para exibir os pratos na página
 function exibirPratos(pratos) {
-    const lista = document.getElementById('listaPratos') || document.body; 
+    const lista = document.getElementById('listaPratos'); 
     lista.innerHTML = ''; // Limpa a lista atual
 
     pratos.forEach(prato => {
@@ -63,7 +31,7 @@ function exibirPratos(pratos) {
         descricao.textContent = prato.descricao;
 
         const codigoPrato = document.createElement('div');
-        codigoPrato.textContent = `Código: ${prato.cod}`; 
+        codigoPrato.textContent = `Código: ${prato.cod}`;
 
         const botaoRemover = document.createElement('button');
         botaoRemover.textContent = '-';
@@ -71,33 +39,8 @@ function exibirPratos(pratos) {
 
         card.appendChild(titulo);
         card.appendChild(descricao);
-        card.appendChild(botaoRemover);
         card.appendChild(codigoPrato);
+        card.appendChild(botaoRemover);
         lista.appendChild(card);
     });
-}
-
-
-
-async function removerPrato(cod) {
-    try {
-        const response = await fetch(`/admin/prato/${cod}`, {
-            method: 'DELETE',
-            headers: {
-                'Authorization': 'Bearer ' + token // Token de autenticação, se necessário
-            }
-        });
-
-        if (response.status === 204) {
-            alert("Prato removido com sucesso.");
-            carregarPratos(); // Atualiza a lista de pratos a partir da API
-        } else if (response.status === 403) {
-            alert("Você não tem permissão para excluir pratos.");
-        } else {
-            throw new Error("Erro ao tentar remover o prato.");
-        }
-    } catch (error) {
-        console.error(error);
-        alert("Erro ao remover o prato.");
-    }
 }
