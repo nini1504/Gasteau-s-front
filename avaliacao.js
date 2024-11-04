@@ -33,20 +33,20 @@ function displayAvaliacoesAsCards(data) {
         nomePrato.textContent = `Prato: ${item.nome_prato}`;
         card.appendChild(nomePrato);
 
-        // Preço do Prato
-        const precoPrato = document.createElement("p");
-        precoPrato.textContent = `Preço: R$ ${item.preco_prato.toFixed(2)}`;
-        card.appendChild(precoPrato);
-
-        // CPF do Crítico
-        const cpfCritico = document.createElement("p");
-        cpfCritico.textContent = `CPF do Crítico: ${item.cpf_critico}`;
-        card.appendChild(cpfCritico);
+        // Nome do critico
+        const nomeCritico = document.createElement("p");
+        nomeCritico.textContent = `Crítico Avaliador: ${item.nome_critico}`;
+        card.appendChild(nomeCritico);
 
         // Nota da Avaliação
         const notaAvaliacao = document.createElement("p");
         notaAvaliacao.textContent = `Nota: ${item.nota_avaliacao}`;
         card.appendChild(notaAvaliacao);
+
+        // Preço do Prato
+        const precoPrato = document.createElement("p");
+        precoPrato.textContent = `Preço: R$ ${item.preco_prato.toFixed(2)}`;
+        card.appendChild(precoPrato);
 
         // Adicionar o card ao container
         container.appendChild(card);
