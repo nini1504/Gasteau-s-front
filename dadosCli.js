@@ -26,10 +26,18 @@ async function carregarDadosCliente() {
             document.getElementById("nome").textContent = `Nome: ${cliente.nome}`;
             document.getElementById("cpf").textContent = `CPF: ${cliente.cpf}`;
             document.getElementById("telefone").textContent = `Telefone: ${cliente.telefone}`;
-            document.getElementById("foto").src = cliente.fotoPerfil; // Ative isso se tiver um campo de foto
+            
+            // Verifica se existe foto e, em caso positivo, converte e define no elemento 'foto'
+            if (cliente.fotoPerfil) {
+                const fotoBase64 = `data:image/png;base64,${cliente.fotoPerfil}`;
+                document.getElementById("foto").src = fotoBase64;
+            } else {
+                document.getElementById("foto").alt = "Foto não disponível";
+            }
         } else {
             console.error("Erro ao buscar dados do cliente");
         }
+        
     } catch (error) {
         console.error("Erro de conexão:", error);
     }
