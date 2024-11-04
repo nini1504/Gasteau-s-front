@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pratos</title>
+    <link rel="stylesheet" href="stylePratos.css">
+    <style>
+        body {
+            background-color: rgb(219, 213, 197);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #f9f9f9;
+            width: 200px;
+        }
+        #avaliacaoContainer {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        /* Estilo do cabeçalho */
+        header {
+            display: flex;
+            justify-content: space-between;
+            
+            padding: 20px;
+            background-color: rgb(164, 79, 48);
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center; 
+        }
+        
+        /* Título no cabeçalho */
+        titulo {
+            font-size: 40px;
+            color: rgb(219, 213, 197);
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            margin: 0;
+            align-self: center;
+            align-content: center;
+        }
+        div{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            text-align: justify;
+        }
+  
+
+</style>
+</head>
+<body>
+    <header class="jumbotron text-center bg-info text-white">
+        <h1 class="titulo">Avaliações</h1>
+       
+    </header>
+    
+    <div id="avaliacaoContainer">
+        <!-- Os cards serão inseridos aqui pelo JavaScript -->
+    </div>
+
+    <script src="avaliacao.js"></script>
+</body>
+</html>
