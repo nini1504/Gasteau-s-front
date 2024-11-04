@@ -1,12 +1,10 @@
-const apiUrlPratos = 'http://localhost:8080/pratos'; 
+const apiUrlPratos = 'http://localhost:8080'; 
 async function cadastrarPrato() {
     window.location.href = 'cadastroPrato.html';
     
     const dadosPrato = {
-        id: document.getElementById("idPrato").value,
         nome: document.getElementById("nomePrato").value,
         preco: parseFloat(document.getElementById("preco").value) || 0,
-        avaliacaoMed: parseFloat(document.getElementById("avaliacaoMed").value) || 0,
         descricao: document.getElementById("descricao").value,
         modoPreparo: document.getElementById("modoPreparo").value,
     };
