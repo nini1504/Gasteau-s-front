@@ -76,11 +76,11 @@ async function atualizarDados() {
 }
 
 // Função para excluir a conta do cliente
-async function excluirConta() {
+async function apagarInformacoes() {
     const token = localStorage.getItem("token");
 
     try {
-        const response = await fetch(apiUrl, {
+        const response = await fetch('http://localhost:8080/user', {
             method: "DELETE",
             headers: {
                 'Authorization': 'Bearer ' + token, // Adiciona o token JWT
@@ -101,15 +101,7 @@ async function excluirConta() {
     } catch (error) {
         console.error("Erro de conexão:", error);
     }
-}
-
-// Função para apagar as informações exibidas
-function apagarInformacoes() {
-    document.getElementById("nome").textContent = "Nome: ";
-    document.getElementById("cpf").textContent = "CPF: ";
-    document.getElementById("telefone").textContent = "Telefone: ";
-    document.getElementById("foto").src = ""; // Remove a foto, se estiver presente
-    console.log("Informações apagadas da tela");
+    window.location.href = "home.html";
 }
 
 // Carrega os dados quando a página termina de carregar
