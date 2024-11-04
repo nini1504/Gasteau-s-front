@@ -31,6 +31,8 @@ async function logar() {
 
         const data = await response.json();
         localStorage.setItem('token', data.token);  // Armazena o token JWT no localStorage
+        localStorage.setItem('nrocarteira', nrocarteira);  // Armazena o nrocarteira no localStorage
+
 
         // Exibe uma mensagem de sucesso
         mensagemDiv.style.color = 'green'; // Muda a cor da mensagem para verde
