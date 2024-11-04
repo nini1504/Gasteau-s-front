@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function fetchRelatorioMensal() {
-    fetch("/api/relatorios/relatorioMensal")
+    fetch("http://localhost:8080/admin/relatorioReservasClientes")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Erro ao buscar dados do relatório mensal.");
