@@ -1,8 +1,5 @@
 const apiUrlCadastroCliente = 'http://localhost:8080/cadastro/cliente';
 
-// Adiciona um listener de evento ao botão
-document.getElementById('cadastrarBtn').addEventListener('click', cadastrarCliente);
-
 async function cadastrarCliente() {
     const nome = document.getElementById('nomeCliente').value;
     const cpf = document.getElementById('cpfCliente').value;
@@ -21,23 +18,28 @@ async function cadastrarCliente() {
         return;
     }
 
+    // Criar o FormData e adicionar os campos
     const formData = new FormData();
     formData.append('nome', nome);
     formData.append('cpf', cpf);
     formData.append('telefone', telefone);
     formData.append('senha', senha);
-    formData.append('foto', foto);
+
+    // Adicionar a foto diretamente ao FormData
+    if (foto) {
+        formData.append('fotoPerfil', foto);
+    }
 
     try {
         const response = await fetch(apiUrlCadastroCliente, {
             method: 'POST',
-            body: formData, // Enviar o formData diretamente
+            body: formData,
         });
 
         if (!response.ok) throw new Error('Erro ao cadastrar cliente');
 
         alert('Cadastro de cliente realizado com sucesso!');
-        localStorage.setItem("clienteCpf",cpf);
+        localStorage.setItem("clienteCpf", cpf);
         window.location.href = "dadosCli.html";
     } catch (error) {
         console.error('Erro ao cadastrar cliente:', error);
