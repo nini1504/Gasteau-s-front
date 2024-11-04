@@ -1,17 +1,33 @@
-document.addEventListener("DOMContentLoaded", function() { 
+document.addEventListener("DOMContentLoaded", function () {
     fetchRelatorioMensal();
 });
 
-function fetchRelatorioMensal() {
-    fetch("/api/relatorios/relatorioMensal")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Erro ao buscar dados do relatório mensal.");
+async function fetchRelatorioMensal() {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+        alert('Você precisa estar logado para visualizar o relatório mensal.');
+        return;
+    }
+
+    try {
+        const response = await fetch("http://localhost:8080/admin/relatorioReservasClientes",{
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
             }
-            return response.json();
         })
-        .then(data => displayRelatorioAsCards(data))
-        .catch(error => console.error("Erro ao buscar relatório:", error));
+        if (response.ok) {
+            const dados = await response.json();
+            displayRelatorioAsCards(dados);
+        } else {
+            console.error("Erro ao carregar relatório:", response.statusText);
+        }
+    } catch (error) {
+        console.error("Erro na requisição:", error);
+    }
+
 }
 
 function displayRelatorioAsCards(data) {
