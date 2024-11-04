@@ -1,6 +1,14 @@
 const apiUrlCadastroPrato = 'http://localhost:8080/admin/prato';
 
 async function cadastrarPrato() {
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+        alert('Você precisa estar logado para cadastrar o prato.');
+        return;
+    }
+
+
     // Coleta dos dados do formulário
     const nome = document.getElementById("nomePrato").value;
     const preco = parseFloat(document.getElementById("preco").value) || 0;
@@ -13,21 +21,30 @@ async function cadastrarPrato() {
         return;
     }
 
-    const formData = new FormData();
-    formData.append("nome", nome);
-    formData.append("preco", preco);
-    formData.append("descricao", descricao);
-    formData.append("modoPreparo", modoPreparo);
+    const pratoDados = {
+        nome: nome,
+        preco: preco,
+        descricao: descricao,
+        modoPreparo: modoPreparo
+
+    };
 
     try {
         const response = await fetch(apiUrlCadastroPrato, {
             method: 'POST',
-            body: formData,
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(pratoDados),
         });
+        
 
         if (response.ok) {
             alert("Prato cadastrado com sucesso!");
             carregarPratos(); // Atualiza a lista de pratos após o cadastro
+            window.location.href = "pratos.html";
+
         } else if (response.status === 403) {
             alert("Erro: Apenas funcionários podem cadastrar pratos.");
         } else {

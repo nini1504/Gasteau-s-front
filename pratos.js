@@ -33,6 +33,12 @@ function exibirPratos(pratos) {
         const codigoPrato = document.createElement('div');
         codigoPrato.textContent = `Código: ${prato.cod}`;
 
+        const precoPrato = document.createElement('div');
+        precoPrato.textContent = `Preço: ${prato.preco}`;
+
+        const avaliacao = document.createElement('div');
+        avaliacao.textContent = `Avaliação: ${prato.avaliacaoMed}`;
+
         const botaoRemover = document.createElement('button');
         botaoRemover.textContent = '-';
         botaoRemover.onclick = () => removerPrato(prato.cod); // envia o código do prato para remoção
@@ -40,6 +46,8 @@ function exibirPratos(pratos) {
         card.appendChild(titulo);
         card.appendChild(descricao);
         card.appendChild(codigoPrato);
+        card.appendChild(precoPrato);
+        card.appendChild(avaliacao);
         card.appendChild(botaoRemover);
         lista.appendChild(card);
     });
