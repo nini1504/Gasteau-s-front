@@ -2,20 +2,22 @@ document.addEventListener("DOMContentLoaded", function() {
     fetchRelatorioAvaliacoes();
 });
 
-function fetchRelatorioAvaliacoes() {
-    fetch("/api/relatorios/relatorioAvaliacoes")
-        .then(response => {
-            if (!response.ok) {
-                throw new Error("Erro ao buscar dados do relatório de avaliações.");
-            }
-            return response.json();
-        })
-        .then(data => displayAvaliacoesAsCards(data))
-        .catch(error => console.error("Erro ao buscar relatório:", error));
+try {
+    const response = await fetch("http://localhost:8080/relatorioAvaliacao",{
+        method: 'GET'
+    })
+    if (response.ok) {
+        const dados = await response.json();
+        displayAvaliacoesAsCards(dados);
+    } else {
+        console.error("Erro ao carregar relatório:", response.statusText);
+    }
+} catch (error) {
+    console.error("Erro na requisição:", error);
 }
 
 function displayAvaliacoesAsCards(data) {
-    const container = document.getElementById("relatorioAvaliacoesContainer");
+    const container = document.getElementById("avaliacaoContainer");
     container.innerHTML = ""; // Limpa o conteúdo anterior
 
     data.forEach(item => {
