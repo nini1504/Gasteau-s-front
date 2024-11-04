@@ -2,18 +2,21 @@ document.addEventListener("DOMContentLoaded", function() {
     fetchRelatorioAvaliacoes();
 });
 
-try {
-    const response = await fetch("http://localhost:8080/relatorioAvaliacao",{
-        method: 'GET'
-    })
-    if (response.ok) {
-        const dados = await response.json();
-        displayAvaliacoesAsCards(dados);
-    } else {
-        console.error("Erro ao carregar relatório:", response.statusText);
+async function fetchRelatorioAvaliacoes() {
+    try {
+        const response = await fetch("http://localhost:8080/relatorioAvaliacao", {
+            method: 'GET'
+        });
+        
+        if (response.ok) {
+            const dados = await response.json();
+            displayAvaliacoesAsCards(dados);
+        } else {
+            console.error("Erro ao carregar relatório:", response.statusText);
+        }
+    } catch (error) {
+        console.error("Erro na requisição:", error);
     }
-} catch (error) {
-    console.error("Erro na requisição:", error);
 }
 
 function displayAvaliacoesAsCards(data) {
