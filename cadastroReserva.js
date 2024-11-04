@@ -26,7 +26,7 @@ async function cadastrarReserva() {
     };
 
     try {
-        const response = await fetch('/reserva', {
+        const response = await fetch(reservaUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -46,6 +46,9 @@ async function cadastrarReserva() {
         const data = await response.json();
         console.log('Reserva cadastrada:', data);
         alert('Reserva cadastrada com sucesso!');
+        window.location.href = "home.html";              // Redireciona para a "home"
+
+
     } catch (error) {
         console.error('Erro ao cadastrar reserva:', error);
         alert('Erro ao cadastrar reserva.');
