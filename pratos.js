@@ -1,95 +1,114 @@
 // Função para cadastrar um prato
 async function cadastrarPrato() {
     const dadosPrato = {
-        nome: document.getElementById("nomePrato").value,
-        preco: parseFloat(document.getElementById("preco").value) || 0,
-        descricao: document.getElementById("descricao").value,
+        nome: prompt("Nome do Prato:"),
+        preco: parseFloat(prompt("Preço do Prato:")) || 0,
+        descricao: prompt("Descrição do Prato:"),
+        avaliacaoMed: parseFloat(prompt("Avaliação Média (de 0 a 10):")) || 0, // Preenchido mas não exibido
+        modoPreparo: prompt("Modo de Preparo:") // Preenchido mas não exibido
     };
 
     try {
-        const response = await fetch('/admin/prato', {
+        const response = await fetch('/admin/prato', { // Rota para cadastrar
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(dadosPrato)
         });
-        const result = await response.json();
 
         if (response.ok) {
             alert('Prato cadastrado com sucesso!');
             carregarPratos(); // Atualiza a lista de pratos
         } else {
+            const result = await response.json();
             alert(result.message || 'Erro ao cadastrar o prato.');
         }
     } catch (error) {
         console.error('Erro ao cadastrar o prato:', error);
-        alert('Erro ao processar a requisição.');
     }
 }
 
 // Função para atualizar um prato
-async function atualizarPrato(cod) {
+async function atualizarPrato() {
+    const id = prompt("Informe o código do prato a ser atualizado:");
     const dadosPrato = {
-        nome: document.getElementById("nomePrato").value,
-        preco: parseFloat(document.getElementById("preco").value) || 0,
-        descricao: document.getElementById("descricao").value,
+        nome: prompt("Novo Nome do Prato:"),
+        preco: parseFloat(prompt("Novo Preço do Prato:")) || 0,
+        descricao: prompt("Nova Descrição do Prato:"),
+        avaliacaoMed: parseFloat(prompt("Nova Avaliação Média (de 0 a 10):")) || 0, // Preenchido mas não exibido
+        modoPreparo: prompt("Novo Modo de Preparo:") // Preenchido mas não exibido
     };
 
     try {
-        const response = await fetch(`/admin/prato/${cod}`, {
+        const response = await fetch(`/admin/prato/${id}`, { // Rota para atualizar
             method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(dadosPrato)
         });
 
         if (response.ok) {
-            alert("Prato atualizado com sucesso!");
+            alert('Prato atualizado com sucesso!');
             carregarPratos(); // Atualiza a lista de pratos
         } else {
-            alert("Erro ao atualizar prato: " + response.statusText);
+            alert('Erro ao atualizar o prato.');
         }
     } catch (error) {
-        console.error("Erro na requisição:", error);
-        alert("Erro na requisição: " + error.message);
+        console.error('Erro ao atualizar o prato:', error);
     }
 }
 
-// Função para remover um prato
-async function removerPrato(cod) {
-    try {
-        const response = await fetch(`/admin/prato/${cod}`, {
-            method: 'DELETE',
-            headers: { 'Content-Type': 'application/json' }
-        });
-        const result = await response.json();
 
-        if (response.ok) {
-            alert('Prato removido com sucesso!');
-            carregarPratos(); // Atualiza a lista de pratos
-        } else {
-            alert(result.message || 'Erro ao remover o prato.');
+// Função para remover um prato
+async function removerPrato(id) {
+    if (confirm(`Você realmente deseja remover o prato de código ${id}?`)) {
+        try {
+            const response = await fetch(`/admin/prato/${id}`, { // Rota para remover
+                method: 'DELETE',
+                headers: { 'Content-Type': 'application/json' }
+            });
+
+            if (response.ok) {
+                alert('Prato removido com sucesso!');
+                carregarPratos(); // Atualiza a lista de pratos
+            } else {
+                const result = await response.json();
+                alert(result.message || 'Erro ao remover o prato.');
+            }
+        } catch (error) {
+            console.error('Erro ao remover o prato:', error);
         }
-    } catch (error) {
-        console.error('Erro ao remover o prato:', error);
-        alert('Erro ao processar a requisição.');
     }
 }
 
 // Função para carregar e exibir os pratos
 async function carregarPratos() {
     try {
-        const response = await fetch('/pratos'); // Requisição GET para obter os pratos
-        if (response.ok) {
-            const pratos = await response.json();
-            exibirPratos(pratos);
-        } else {
-            console.error("Erro ao carregar pratos:", response.statusText);
-            alert("Erro ao carregar pratos.");
-        }
+        const response = await fetch('http://localhost:8080/pratos'); // Rota para listar pratos
+        const pratos = await response.json();
+        const pratosContainer = document.getElementById('pratos-container');
+
+        // Limpa o contêiner antes de adicionar os pratos
+        pratosContainer.innerHTML = '';
+
+        // Cria os cards para cada prato retornado
+        pratos.forEach(prato => {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            card.innerHTML = `
+                <h3>${prato.nome}</h3>
+                <p>${prato.descricao}</p>
+                <div class="botoes">
+                    <button title="Excluir prato" onclick="removerPrato(${prato.id})">-</button>
+                </div>
+                <div class="card-footer">
+                    <div class="codigo">Código = ${prato.id}</div>
+                </div>
+            `;
+
+            pratosContainer.appendChild(card);
+        });
     } catch (error) {
-        console.error("Erro na requisição:", error);
-        alert("Erro ao carregar pratos.");
+        console.error('Erro ao carregar os pratos:', error);
     }
 }
 
