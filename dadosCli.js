@@ -5,6 +5,7 @@ async function carregarDadosCliente() {
     const token = localStorage.getItem("token"); // Obter o token JWT do localStorage
 
     // Verifica se o token está presente, caso contrário, redireciona para a página de login
+
     if (!token) {
         console.error("Token não encontrado. Faça o login.");
         window.location.href = "login.html"; // Redireciona para o login, se o token não estiver presente
@@ -25,7 +26,7 @@ async function carregarDadosCliente() {
             document.getElementById("nome").textContent = `Nome: ${cliente.nome}`;
             document.getElementById("cpf").textContent = `CPF: ${cliente.cpf}`;
             document.getElementById("telefone").textContent = `Telefone: ${cliente.telefone}`;
-            // document.getElementById("foto").src = cliente.foto; // Ative isso se tiver um campo de foto
+            document.getElementById("foto").src = cliente.fotoPerfil; // Ative isso se tiver um campo de foto
         } else {
             console.error("Erro ao buscar dados do cliente");
         }
