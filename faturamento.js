@@ -19,7 +19,7 @@ async function fetchRelatorioMensal() {
             }
         })
         if (response.ok) {
-            const dados = await response.json();
+            const dados = await response.json();    
             displayRelatorioAsCards(dados);
         } else {
             console.error("Erro ao carregar relatório:", response.statusText);
