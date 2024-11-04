@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function() { 
     fetchRelatorioMensal();
 });
 
 function fetchRelatorioMensal() {
-    fetch("http://localhost:8080/admin/relatorioReservasClientes")
+    fetch("/api/relatorios/relatorioMensal")
         .then(response => {
             if (!response.ok) {
                 throw new Error("Erro ao buscar dados do relatório mensal.");
@@ -35,7 +35,7 @@ function displayRelatorioAsCards(data) {
 
         // Valor Total
         const valorTotal = document.createElement("p");
-        valorTotal.textContent = `Valor Total: R$ ${item.valor_total_reservas_mes.toFixed(2)}`;
+        valorTotal.textContent = `Valor Total: R$ ${item.valor_total_reservas_mes ? item.valor_total_reservas_mes.toFixed(2) : '0.00'}`;
         card.appendChild(valorTotal);
 
         // Adicionar o card ao container
