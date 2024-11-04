@@ -42,7 +42,7 @@ async function atualizarPrato() {
             window.location.href = "pratos.html";
         } else {
             console.error('Erro ao atualizar o prato');
-            alert('Erro ao atualizar o prato. Verifique o ID e tente novamente.');
+            alert('Erro ao atualizar o prato. Verifique os campos e tente novamente.');
         }
     } catch (error) {
         console.error('Erro de conexão:', error);
