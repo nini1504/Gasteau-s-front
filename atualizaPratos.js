@@ -1,27 +1,37 @@
 const apiUrlAtualizarPratos = 'http://localhost:8080/admin/prato'; 
 
 async function atualizarPrato() {
-    window.location.href = 'atualizaPratos.html';
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+        alert('Você precisa estar logado para cadastrar o prato.');
+        return;
+    }
+
     const idPrato = document.getElementById('idPrato').value;
     const nomePrato = document.getElementById('nomePrato').value;
     const preco = document.getElementById('preco').value;
-    const avaliacaoMed = document.getElementById('avaliacaoMed').value;
     const descricao = document.getElementById('descricao').value;
-    const modoPreparo = document.getElementById('modoPreparo').value;
 
-    const dadosAtualizados = {
-        nome: nomePrato || undefined,
-        preco: preco ? parseFloat(preco) : undefined,
-        avaliacaoMed: avaliacaoMed ? parseFloat(avaliacaoMed) : undefined,
-        descricao: descricao || undefined,
-        modoPreparo: modoPreparo || undefined
-    };
+    const dadosAtualizados = {};
+
+    // Adiciona os campos apenas se estiverem preenchidos
+    if (nomePrato) {
+        dadosAtualizados.nome = nomePrato;
+    }
+    if (preco) {
+        dadosAtualizados.preco = parseFloat(preco); // Converte para float
+    }
+    if (descricao) {
+        dadosAtualizados.descricao = descricao;
+    }
 
     try {
         const response = await fetch(`${apiUrlAtualizarPratos}/${idPrato}`, {
             method: 'PUT',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(dadosAtualizados)
         });
@@ -29,6 +39,7 @@ async function atualizarPrato() {
         if (response.ok) {
             alert('Prato atualizado com sucesso!');
             document.getElementById('atualizarPratosForm').reset(); // Limpa o formulário
+            window.location.href = "pratos.html";
         } else {
             console.error('Erro ao atualizar o prato');
             alert('Erro ao atualizar o prato. Verifique o ID e tente novamente.');
