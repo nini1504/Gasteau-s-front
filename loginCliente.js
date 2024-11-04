@@ -31,8 +31,9 @@ async function logar() {
         }
 
         const data = await response.json();
-        localStorage.setItem('clienteCpf', cpf); // Armazena o CPF
-        window.location.href = "home.html"; // Redireciona para a "home"
+        localStorage.setItem('clienteCpf', cpf);         // Armazena o CPF
+        localStorage.setItem('token', data.token);       // Armazena o token JWT
+        window.location.href = "home.html";              // Redireciona para a "home"
     
     } catch (error) {
         console.error('Erro ao fazer login:', error);
